@@ -1,5 +1,5 @@
-use rtda::heap::class::Class;
-use rtda::slot::Slot;
+use crate::rtda::heap::class::Class;
+use crate::rtda::slot::Slot;
 
 struct Object {
     class: Class,

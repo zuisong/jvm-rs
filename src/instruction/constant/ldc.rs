@@ -1,8 +1,8 @@
-use classfile::constant_info::ConstantInfo;
-use instruction::instruction::ExecuteResult;
-use rtda::frame::Frame;
-use rtda::thread::Thread;
-use util::code_reader::CodeReader;
+use crate::classfile::constant_info::ConstantInfo;
+use crate::instruction::instruction::ExecuteResult;
+use crate::rtda::frame::Frame;
+use crate::rtda::thread::Thread;
+use crate::util::code_reader::CodeReader;
 
 #[allow(non_snake_case)]
 pub fn LDC(code_reader: CodeReader, thread: Thread) -> (ExecuteResult, CodeReader) {

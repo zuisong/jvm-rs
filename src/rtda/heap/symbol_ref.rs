@@ -1,7 +1,8 @@
-use classfile::constant_pool::ConstantPool;
-use rtda::heap::class::Class;
 use std::rc::Rc;
-use classfile::constant_info::ConstantInfo;
+
+use crate::classfile::constant_info::ConstantInfo;
+use crate::classfile::constant_pool::ConstantPool;
+use crate::rtda::heap::class::Class;
 
 pub struct SymbolRef {
     constant_pool: Rc<ConstantPool>,

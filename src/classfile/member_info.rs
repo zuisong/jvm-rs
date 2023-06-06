@@ -1,4 +1,4 @@
-use classfile::attribute_info::AttributeInfo;
+use crate::classfile::attribute_info::AttributeInfo;
 
 #[derive(Debug)]
 pub struct MemberInfo {

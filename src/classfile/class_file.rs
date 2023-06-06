@@ -1,6 +1,6 @@
-use classfile::attribute_info::AttributeInfo;
-use classfile::constant_pool::ConstantPool;
-use classfile::member_info::MemberInfo;
+use crate::classfile::attribute_info::AttributeInfo;
+use crate::classfile::constant_pool::ConstantPool;
+use crate::classfile::member_info::MemberInfo;
 
 #[derive(Debug)]
 pub struct ClassFile {

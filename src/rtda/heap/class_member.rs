@@ -1,5 +1,5 @@
-use classfile::member_info::MemberInfo;
-use rtda::heap::access_flags::*;
+use crate::classfile::member_info::MemberInfo;
+use crate::rtda::heap::access_flags::*;
 
 #[derive(Debug)]
 pub struct ClassMember {

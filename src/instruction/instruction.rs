@@ -1,22 +1,22 @@
-use instruction::comparison::dcmp::*;
-use instruction::comparison::fcmp::*;
-use instruction::comparison::if_icmp::*;
-use instruction::comparison::ifcond::*;
-use instruction::comparison::lcmp::*;
-use instruction::constant::ldc::*;
-use instruction::constant::nop::NOP;
-use instruction::constant::xconst::*;
-use instruction::constant::xipush::*;
-use instruction::control::goto::*;
-use instruction::load::iload::*;
-use instruction::math::add::*;
-use instruction::math::and::*;
-use instruction::math::inc::*;
-use instruction::math::mul::*;
-use instruction::math::neg::*;
-use instruction::store::istore::*;
-use rtda::thread::Thread;
-use util::code_reader::CodeReader;
+use crate::instruction::comparison::dcmp::*;
+use crate::instruction::comparison::fcmp::*;
+use crate::instruction::comparison::if_icmp::*;
+use crate::instruction::comparison::ifcond::*;
+use crate::instruction::comparison::lcmp::*;
+use crate::instruction::constant::ldc::*;
+use crate::instruction::constant::nop::NOP;
+use crate::instruction::constant::xconst::*;
+use crate::instruction::constant::xipush::*;
+use crate::instruction::control::goto::*;
+use crate::instruction::load::iload::*;
+use crate::instruction::math::add::*;
+use crate::instruction::math::and::*;
+use crate::instruction::math::inc::*;
+use crate::instruction::math::mul::*;
+use crate::instruction::math::neg::*;
+use crate::instruction::store::istore::*;
+use crate::rtda::thread::Thread;
+use crate::util::code_reader::CodeReader;
 
 pub struct ExecuteResult {
     pub thread: Thread,
@@ -29,7 +29,7 @@ pub fn execute(pc: usize, thread: Thread) -> (ExecuteResult, CodeReader) {
     let code_reader = CodeReader::new(code).set_pc(pc);
     let (opcode, after_opcode) = code_reader.read_u8();
 
-    let instruction = match opcode {
+    let instruction: fn(CodeReader, Thread) -> (ExecuteResult, CodeReader) = match opcode {
         0x00 => NOP,
         0x02 => ICONST_M1,
         0x03 => ICONST_0,

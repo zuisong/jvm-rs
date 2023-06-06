@@ -1,8 +1,9 @@
-use rtda::heap::class::Class;
-use rtda::heap::method::Method;
-use rtda::operand_stack::OperandStack;
-use rtda::vars::Vars;
 use std::rc::Rc;
+
+use crate::rtda::heap::class::Class;
+use crate::rtda::heap::method::Method;
+use crate::rtda::operand_stack::OperandStack;
+use crate::rtda::vars::Vars;
 
 #[derive(Debug)]
 pub struct Frame {
@@ -33,15 +34,17 @@ impl Frame {
 
 #[cfg(test)]
 mod tests {
-    use classfile::constant_pool::ConstantPool;
-    use classfile::member_info::MemberInfo;
-    use rtda::frame::Frame;
-    use rtda::heap::class::Class;
-    use rtda::heap::method::Method;
-    use rtda::operand_stack::OperandStack;
-    use rtda::vars::Vars;
     use std::rc::Rc;
+
     use vec_map::VecMap;
+
+    use crate::classfile::constant_pool::ConstantPool;
+    use crate::classfile::member_info::MemberInfo;
+    use crate::rtda::frame::Frame;
+    use crate::rtda::heap::class::Class;
+    use crate::rtda::heap::method::Method;
+    use crate::rtda::operand_stack::OperandStack;
+    use crate::rtda::vars::Vars;
 
     #[test]
     fn frame() {

@@ -2,8 +2,9 @@
 name = "jvm"
 version = "0.1.0"
 authors = ["StandbyMe <stand-by-me@mail.com>"]
+edition="2021"
 
 [dependencies]
-byteorder = "1"
-vec_map = "0.8.1"
-zip = "0.5.2"
+byteorder = "1.4.3"
+vec_map = "0.8.2"
+zip = "0.6.6"

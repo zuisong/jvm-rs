@@ -1,4 +1,4 @@
-use rtda::frame::Frame;
+use crate::rtda::frame::Frame;
 
 pub struct Stack {
     max_size: usize,

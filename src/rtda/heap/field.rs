@@ -1,6 +1,6 @@
-use classfile::attribute_info::AttributeInfo;
-use classfile::member_info::MemberInfo;
-use rtda::heap::class_member::ClassMember;
+use crate::classfile::attribute_info::AttributeInfo;
+use crate::classfile::member_info::MemberInfo;
+use crate::rtda::heap::class_member::ClassMember;
 
 #[derive(Debug)]
 pub struct Field {

@@ -1,5 +1,5 @@
-use rtda::frame::Frame;
-use rtda::stack::Stack;
+use crate::rtda::frame::Frame;
+use crate::rtda::stack::Stack;
 
 const STACK_SIZE: usize = 1024;
 

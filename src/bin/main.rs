@@ -1,5 +1,7 @@
 extern crate jvm;
 
+use std::rc::Rc;
+
 use jvm::classpath::classpath::parse;
 use jvm::instruction::instruction;
 use jvm::instruction::instruction::ExecuteResult;
@@ -9,10 +11,9 @@ use jvm::rtda::heap::class_loader::ClassLoader;
 use jvm::rtda::heap::method::Method;
 use jvm::rtda::thread::Thread;
 use jvm::shell::command::Command;
-use std::rc::Rc;
 
 fn main() {
-    let class_name = "src.test_data.FibonacciTest";
+    let class_name = "src.test_data.MyObject";
     let class_name = class_name.replace('.', "/");
     let command = Command {
         class_name,

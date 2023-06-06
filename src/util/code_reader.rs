@@ -1,8 +1,9 @@
 extern crate byteorder;
 
-use self::byteorder::{BigEndian, ByteOrder};
 use std;
 use std::rc::Rc;
+
+use self::byteorder::{BigEndian, ByteOrder};
 
 pub struct CodeReader {
     code: Rc<Vec<u8>>,

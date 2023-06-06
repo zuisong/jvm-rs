@@ -1,8 +1,8 @@
 extern crate zip;
 
 use std::env;
-use std::fs::read_dir;
 use std::fs::File;
+use std::fs::read_dir;
 use std::io;
 use std::io::Error;
 use std::io::ErrorKind;

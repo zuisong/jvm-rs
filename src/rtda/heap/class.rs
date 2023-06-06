@@ -1,8 +1,9 @@
-use classfile::constant_pool::ConstantPool;
-use rtda::heap::field::Field;
-use rtda::heap::method::Method;
-use rtda::vars::Vars;
 use std::rc::Rc;
+
+use crate::classfile::constant_pool::ConstantPool;
+use crate::rtda::heap::field::Field;
+use crate::rtda::heap::method::Method;
+use crate::rtda::vars::Vars;
 
 #[derive(Debug)]
 pub struct Class {
@@ -30,7 +31,8 @@ impl Class {
             "name {} descriptor {} is_static {}",
             name, descriptor, is_static
         );
-        let reference = self.methods
+        let reference = self
+            .methods
             .iter()
             .find(|x| {
                 x.is_static() == is_static && x.name() == name && x.descriptor() == descriptor

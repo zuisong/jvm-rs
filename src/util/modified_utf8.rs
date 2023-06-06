@@ -24,7 +24,7 @@ pub fn from_modified_utf8(bytes: &[u8]) -> Result<String, ModifiedUtf8Error> {
             () => {
                 return Err(ModifiedUtf8Error {
                     valid_up_to: old_offset,
-                });
+                })
             };
         }
         macro_rules! next {

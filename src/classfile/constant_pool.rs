@@ -1,5 +1,6 @@
-use classfile::constant_info::ConstantInfo;
 use vec_map::VecMap;
+
+use crate::classfile::constant_info::ConstantInfo;
 
 #[derive(Debug)]
 pub struct ConstantPool {

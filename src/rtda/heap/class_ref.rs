@@ -1,7 +1,8 @@
-use rtda::heap::symbol_ref::SymbolRef;
 use std::rc::Rc;
-use classfile::constant_pool::ConstantPool;
-use classfile::constant_info::ConstantInfo;
+
+use crate::classfile::constant_info::ConstantInfo;
+use crate::classfile::constant_pool::ConstantPool;
+use crate::rtda::heap::symbol_ref::SymbolRef;
 
 struct ClassRef {
     symbol_ref: SymbolRef,

@@ -1,5 +1,5 @@
-use rtda::slot::Slot;
-use util::converter;
+use crate::rtda::slot::Slot;
+use crate::util::converter;
 
 #[derive(Debug)]
 pub struct OperandStack {
@@ -22,7 +22,6 @@ impl OperandStack {
         let val = self.vec.pop().unwrap();
         match val {
             Slot::Num(val) => (val, self),
-            _ => panic!(),
         }
     }
 
@@ -36,11 +35,9 @@ impl OperandStack {
     pub fn pop_long(mut self) -> (i64, OperandStack) {
         let b = match self.vec.pop().unwrap() {
             Slot::Num(val) => val,
-            _ => panic!(),
         };
         let a = match self.vec.pop().unwrap() {
             Slot::Num(val) => val,
-            _ => panic!(),
         };
         (converter::i32seq_to_i64([a, b]), self)
     }
@@ -55,11 +52,9 @@ impl OperandStack {
     pub fn pop_double(mut self) -> (f64, OperandStack) {
         let b = match self.vec.pop().unwrap() {
             Slot::Num(val) => val,
-            _ => panic!(),
         };
         let a = match self.vec.pop().unwrap() {
             Slot::Num(val) => val,
-            _ => panic!(),
         };
         (converter::i32seq_to_f64([a, b]), self)
     }
@@ -74,7 +69,6 @@ impl OperandStack {
         let val = self.vec.pop().unwrap();
         match val {
             Slot::Num(val) => (converter::i32_to_f32(val), self),
-            _ => panic!(),
         }
     }
 }

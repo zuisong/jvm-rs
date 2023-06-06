@@ -1,18 +1,19 @@
 extern crate byteorder;
 
+use std::rc::Rc;
+
 use vec_map::VecMap;
 
-use self::byteorder::{BigEndian, ByteOrder};
-
-use classfile::attribute_info::{
+use crate::classfile::attribute_info::{
     AttributeInfo, ExceptionTableEntry, LineNumberTableEntry, LocalVariableTableEntry,
 };
-use classfile::class_file::ClassFile;
-use classfile::constant_info::ConstantInfo;
-use classfile::constant_pool::ConstantPool;
-use classfile::member_info::MemberInfo;
-use std::rc::Rc;
-use util::modified_utf8::from_modified_utf8;
+use crate::classfile::class_file::ClassFile;
+use crate::classfile::constant_info::ConstantInfo;
+use crate::classfile::constant_pool::ConstantPool;
+use crate::classfile::member_info::MemberInfo;
+use crate::util::modified_utf8::from_modified_utf8;
+
+use self::byteorder::{BigEndian, ByteOrder};
 
 const CONSTANT_UTF8: u8 = 1;
 const CONSTANT_INTEGER: u8 = 3;
@@ -114,8 +115,8 @@ impl ClassReader for [u8] {
 
     fn read_and_check_magic(&self) -> (u32, &[u8]) {
         let result = self.read_u32();
-        let (magic, _) = result;
-        assert_eq!(magic, 0xCAFEBABE);
+        let ( magic, _) = &result;
+        assert_eq!(*magic, 0xCAFEBABE);
         result
     }
 
@@ -493,13 +494,14 @@ impl ClassReader for [u8] {
 
 #[cfg(test)]
 mod tests {
-    use classfile::attribute_info::{AttributeInfo, LineNumberTableEntry};
-    use classfile::class_file::ClassFile;
-    use classfile::class_reader::ClassReader;
-    use classfile::constant_info::ConstantInfo;
-    use classfile::member_info::MemberInfo;
     use std::fs::File;
     use std::io::Read;
+
+    use crate::classfile::attribute_info::{AttributeInfo, LineNumberTableEntry};
+    use crate::classfile::class_file::ClassFile;
+    use crate::classfile::class_reader::ClassReader;
+    use crate::classfile::constant_info::ConstantInfo;
+    use crate::classfile::member_info::MemberInfo;
 
     #[test]
     fn parse() {

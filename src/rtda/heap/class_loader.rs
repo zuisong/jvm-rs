@@ -1,16 +1,15 @@
-use classfile::class_file::ClassFile;
-use classfile::class_reader::ClassReader;
-use classfile::constant_info::ConstantInfo;
-use classfile::constant_pool::ConstantPool;
-
-use classpath::classpath::ClassPath;
-use rtda::heap::class::Class;
-use rtda::heap::field::Field;
-use rtda::heap::method::Method;
-
-use rtda::vars::Vars;
 use std::collections::HashMap;
 use std::rc::Rc;
+
+use crate::classfile::class_file::ClassFile;
+use crate::classfile::class_reader::ClassReader;
+use crate::classfile::constant_info::ConstantInfo;
+use crate::classfile::constant_pool::ConstantPool;
+use crate::classpath::classpath::ClassPath;
+use crate::rtda::heap::class::Class;
+use crate::rtda::heap::field::Field;
+use crate::rtda::heap::method::Method;
+use crate::rtda::vars::Vars;
 
 pub struct ClassLoader {
     class_path: ClassPath,

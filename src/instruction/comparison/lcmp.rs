@@ -1,7 +1,7 @@
-use instruction::instruction::ExecuteResult;
-use rtda::frame::Frame;
-use rtda::thread::Thread;
-use util::code_reader::CodeReader;
+use crate::instruction::instruction::ExecuteResult;
+use crate::rtda::frame::Frame;
+use crate::rtda::thread::Thread;
+use crate::util::code_reader::CodeReader;
 
 #[allow(non_snake_case)]
 pub fn LCMP(code_reader: CodeReader, thread: Thread) -> (ExecuteResult, CodeReader) {
@@ -37,19 +37,22 @@ pub fn LCMP(code_reader: CodeReader, thread: Thread) -> (ExecuteResult, CodeRead
 
 #[cfg(test)]
 mod tests {
-    use classfile::constant_pool::ConstantPool;
-    use classfile::member_info::MemberInfo;
-    use instruction::comparison::lcmp::*;
-    use instruction::instruction::ExecuteResult;
-    use rtda::frame::Frame;
-    use rtda::heap::class::Class;
-    use rtda::heap::method::Method;
-    use rtda::operand_stack::OperandStack;
-    use rtda::thread::Thread;
-    use rtda::vars::Vars;
     use std::rc::Rc;
-    use util::code_reader::CodeReader;
+
     use vec_map::VecMap;
+
+    use crate::classfile::constant_pool::ConstantPool;
+    use crate::classfile::member_info::MemberInfo;
+    use crate::instruction::comparison::lcmp::*;
+    use crate::instruction::comparison::lcmp::LCMP;
+    use crate::instruction::instruction::ExecuteResult;
+    use crate::rtda::frame::Frame;
+    use crate::rtda::heap::class::Class;
+    use crate::rtda::heap::method::Method;
+    use crate::rtda::operand_stack::OperandStack;
+    use crate::rtda::thread::Thread;
+    use crate::rtda::vars::Vars;
+    use crate::util::code_reader::CodeReader;
 
     #[test]
     #[allow(non_snake_case)]

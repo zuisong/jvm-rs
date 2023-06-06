@@ -3,3 +3,4 @@
 **/*.rs.bk
 .idea
 jvm-rs.iml
+.DS_Store

@@ -1,6 +1,6 @@
-use instruction::instruction::ExecuteResult;
-use rtda::thread::Thread;
-use util::code_reader::CodeReader;
+use crate::instruction::instruction::ExecuteResult;
+use crate::rtda::thread::Thread;
+use crate::util::code_reader::CodeReader;
 
 #[allow(non_snake_case)]
 pub fn GOTO(code_reader: CodeReader, thread: Thread) -> (ExecuteResult, CodeReader) {

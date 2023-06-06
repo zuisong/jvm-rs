@@ -1,8 +1,8 @@
 extern crate vec_map;
 
-use self::vec_map::VecMap;
+use crate::rtda::slot::Slot;
 
-use rtda::slot::Slot;
+use self::vec_map::VecMap;
 
 #[derive(Debug)]
 pub struct Vars {
@@ -27,7 +27,6 @@ impl Vars {
     pub fn get_int(&self, index: usize) -> i32 {
         match self.vec_map[index] {
             Slot::Num(val) => val,
-            _ => panic!("get_int from wrong place"),
         }
     }
 }
